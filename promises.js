@@ -31,14 +31,24 @@ function createPost(post) {
   });
 };
 
-async function init() {
-  await createPost({title:'Post three', body:'This is post three'});
+// async function init() {
+//   await createPost({title:'Post three', body:'This is post three'});
 
-  getPosts();
+//   getPosts();
+// }
+
+// init();
+
+
+async function fetchUsers() {
+  const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+
+  const data = await res.json();
+
+  console.log(data);
 }
 
-init();
-
+fetchUsers();
 // createPost({title:'Post three', body:'This is post three'})
 //   .then(getPosts);
 //   .catch(err=>console.log(err));
