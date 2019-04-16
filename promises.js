@@ -31,21 +31,28 @@ function createPost(post) {
   });
 };
 
+async function init() {
+  await createPost({title:'Post three', body:'This is post three'});
+
+  getPosts();
+}
+
+init();
+
 // createPost({title:'Post three', body:'This is post three'})
 //   .then(getPosts);
 //   .catch(err=>console.log(err));
 
-const promise1 = Promise.resolve('hello worls');
-const promise2 = 10;
-const promise3 = new Promise((resolve,reject)=>{
-  setTimeout(resolve,2000,'Goodbye');
-});
-const Promise4 =fetch('https://jsonplaceholder.typicode.com/posts').then(
-  const y = res => res.json()
-  return y
-  );
+// const promise1 = Promise.resolve('hello worls');
+// const promise2 = 10;
+// const promise3 = new Promise((resolve,reject)=>{
+//   setTimeout(resolve,2000,'Goodbye');
+// });
+// const Promise4 =fetch('https://jsonplaceholder.typicode.com/posts').then(
+//   res => res.json()
+//   );
 
-Promise.all([promise1,promise2,promise3, Promise4]).then((values)=>{console.log(values)});
+// Promise.all([promise1,promise2,promise3, Promise4]).then((values)=>{console.log(values)});
 
 
 
